@@ -1,5 +1,3 @@
-import './globals.css';
-
 import type { Metadata } from 'next';
 import { Saira } from 'next/font/google';
 
