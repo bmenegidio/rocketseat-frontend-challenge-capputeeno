@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     font-style: ${saira.style.fontStyle};
     font-weight: 400;
     font-size: 16px;
+    background: ${(props) => props.theme.colors.bgPrimary};
   }
 
   * {
