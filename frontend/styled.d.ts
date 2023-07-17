@@ -13,5 +13,14 @@ declare module 'styled-components' {
       bgInput: string;
       danger: string;
     };
+    breakpoints: {
+      mobile: string;
+    };
+    padding: {
+      content: {
+        desktop: string;
+        mobile: string;
+      };
+    };
   }
 }

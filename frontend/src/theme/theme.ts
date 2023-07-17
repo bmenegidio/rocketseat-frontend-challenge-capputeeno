@@ -14,4 +14,13 @@ export const theme: DefaultTheme = {
     bgInput: '#F3F5F6',
     danger: '#DE3838',
   },
+  breakpoints: {
+    mobile: '968px',
+  },
+  padding: {
+    content: {
+      desktop: '20px 160px',
+      mobile: '12px 20px',
+    },
+  },
 };
