@@ -13,6 +13,7 @@ export const theme: DefaultTheme = {
     bgPrimary: '#F0F0F5',
     bgInput: '#F3F5F6',
     danger: '#DE3838',
+    orangeLow: '#FFA585',
   },
   breakpoints: {
     mobile: '968px',

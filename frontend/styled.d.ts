@@ -12,6 +12,7 @@ declare module 'styled-components' {
       bgPrimary: string;
       bgInput: string;
       danger: string;
+      orangeLow: string;
     };
     breakpoints: {
       mobile: string;
