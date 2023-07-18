@@ -11,6 +11,7 @@ export const ContainerStyled = styled.ul`
   background: ${(props) => props.theme.colors.white};
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.1);
   padding: 0.75rem 1rem;
+  z-index: 999;
 
   li + li {
     margin-top: 0.25rem;
