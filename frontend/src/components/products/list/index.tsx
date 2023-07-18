@@ -5,10 +5,11 @@ import { ListItemStyled } from '@/components/products/list/components/listItemSt
 import { ProductsListStyled } from '@/components/products/list/components/listStyled';
 import { ProductNameStyled } from '@/components/products/list/components/productNameStyled';
 import { ProductPriceStyled } from '@/components/products/list/components/productPriceStyled';
+import { useProducts } from '@/hooks/useProducts';
 import { convertPriceInCentsToBrl } from '@/utils/converters';
 
 export const ProductsList = () => {
-  const products = [];
+  const { products } = useProducts();
 
   const renderItem = (product: any) => (
     <ListItemStyled key={product.id}>
