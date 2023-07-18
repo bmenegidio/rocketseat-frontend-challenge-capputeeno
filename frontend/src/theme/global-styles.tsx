@@ -1,7 +1,10 @@
 import { Saira } from 'next/font/google';
 import { createGlobalStyle } from 'styled-components';
 
-const saira = Saira({ subsets: ['latin'], weight: ['400', '500', '600'] });
+const saira = Saira({
+  subsets: ['latin'],
+  weight: ['300', '400', '500', '600'],
+});
 
 export const GlobalStyles = createGlobalStyle`
   body {
