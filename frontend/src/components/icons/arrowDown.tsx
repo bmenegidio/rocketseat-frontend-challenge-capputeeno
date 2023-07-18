@@ -9,7 +9,7 @@ export const ArrowDownIcon = () => (
     <path
       d='M8 10L12 14L16 10'
       stroke='#737380'
-      stroke-width='1.5'
+      strokeWidth='1.5'
       strokeLinecap='round'
       strokeLinejoin='round'
     />
