@@ -10,10 +10,18 @@ export const FilterProvider = ({ children }: { children: ReactNode }) => {
   const [filterByCategory, setFilterByCategory] =
     useState<FilterByCategoryOptions>(FilterByCategoryOptions.ALL);
   const [sortBy, setSortBy] = useState<SortByOptions>(SortByOptions.NEWS);
+  const [text, setText] = useState('');
 
   return (
     <FilterContext.Provider
-      value={{ filterByCategory, setFilterByCategory, sortBy, setSortBy }}
+      value={{
+        filterByCategory,
+        setFilterByCategory,
+        sortBy,
+        setSortBy,
+        text,
+        setText,
+      }}
     >
       {children}
     </FilterContext.Provider>

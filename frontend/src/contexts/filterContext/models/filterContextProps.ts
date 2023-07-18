@@ -6,4 +6,6 @@ export type FilterContextProps = {
   setFilterByCategory: (category: FilterByCategoryOptions) => void;
   sortBy: SortByOptions;
   setSortBy: (sort: SortByOptions) => void;
+  text: string;
+  setText: (text: string) => void;
 };

@@ -1,11 +1,13 @@
 import { gql, useQuery } from '@apollo/client';
+import { useDeferredValue } from 'react';
 
 import { useFilter } from '@/contexts/filterContext/filterContext';
 import { SortByOptions } from '@/contexts/filterContext/models/sortByOptions';
 import { AllProductsResponse } from '@/hooks/useProducts/models/allProductsResponse';
 
 export const useProducts = () => {
-  const { filterByCategory, sortBy } = useFilter();
+  const { filterByCategory, sortBy, text } = useFilter();
+  const textFilter = useDeferredValue(text);
 
   let filterParsed = '{}';
   if (filterByCategory) {
@@ -43,9 +45,16 @@ export const useProducts = () => {
   `;
   const { loading, error, data } = useQuery<AllProductsResponse>(PRODUCTS);
 
+  let filteredProducts = data?.allProducts || [];
+  if (filteredProducts.length > 0) {
+    filteredProducts = filteredProducts.filter((product) =>
+      product.name.toLowerCase().includes(textFilter.toLowerCase()),
+    );
+  }
+
   return {
     loading,
     error,
-    products: data?.allProducts || [],
+    products: filteredProducts,
   };
 };
