@@ -17,19 +17,19 @@ export const List = () => {
   return (
     <ListStyled>
       <ListItemStyled
-        isSelected={isSelected(FilterByCategoryOptions.ALL)}
+        $isSelected={isSelected(FilterByCategoryOptions.ALL)}
         onClick={() => handleSelectCategory(FilterByCategoryOptions.ALL)}
       >
         Todos os Produtos
       </ListItemStyled>
       <ListItemStyled
-        isSelected={isSelected(FilterByCategoryOptions.T_SHIRTS)}
+        $isSelected={isSelected(FilterByCategoryOptions.T_SHIRTS)}
         onClick={() => handleSelectCategory(FilterByCategoryOptions.T_SHIRTS)}
       >
         Camisetas
       </ListItemStyled>
       <ListItemStyled
-        isSelected={isSelected(FilterByCategoryOptions.MUGS)}
+        $isSelected={isSelected(FilterByCategoryOptions.MUGS)}
         onClick={() => handleSelectCategory(FilterByCategoryOptions.MUGS)}
       >
         Canecas

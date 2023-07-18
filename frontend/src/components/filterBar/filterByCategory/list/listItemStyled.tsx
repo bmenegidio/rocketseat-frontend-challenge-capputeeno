@@ -9,7 +9,7 @@ export const ListItemStyled = styled.li<ListItemProps>`
   line-height: 2rem;
 
   ${(props) =>
-    props.isSelected &&
+    props.$isSelected &&
     css`
       font-weight: 600;
       color: ${props.theme.colors.textDark};
