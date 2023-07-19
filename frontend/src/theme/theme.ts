@@ -7,6 +7,7 @@ export const theme: DefaultTheme = {
   colors: {
     textDark: '#41414D',
     textDark2: '#737380',
+    textGray: '#617480',
     shapeDarkTooltip: '#09090A',
     logo: '#5D5D6D',
     white: '#fff',
