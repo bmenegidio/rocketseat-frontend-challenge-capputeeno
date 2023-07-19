@@ -6,13 +6,12 @@ import { SortByOptions } from '@/contexts/filterContext/models/sortByOptions';
 import { AllProductsResponse } from '@/hooks/useProducts/models/allProductsResponse';
 
 export const useProducts = () => {
-  const { filterByCategory, sortBy, text } = useFilter();
+  const { filterByCategory, sortBy, text, currentPage, perPage } = useFilter();
   const textFilter = useDeferredValue(text);
 
-  let filterParsed = '{}';
-  if (filterByCategory) {
-    filterParsed = `{ category: "${filterByCategory}" }`;
-  }
+  const filterParsed = {
+    ...(filterByCategory && { category: filterByCategory }),
+  };
 
   const parseSort = {
     [SortByOptions.NEWS]: {
@@ -33,19 +32,48 @@ export const useProducts = () => {
     },
   };
   const sortParsed = parseSort[sortBy];
+
   const PRODUCTS = gql`
-    query {
-      allProducts (filter: ${filterParsed}, sortField: "${sortParsed.field}", sortOrder: "${sortParsed.order}") {
+    query Products(
+      $perPage: Int!
+      $currentPage: Int!
+      $filter: ProductFilter!
+      $sortField: String!
+      $sortOrder: String!
+    ) {
+      allProducts(
+        perPage: $perPage
+        page: $currentPage
+        filter: $filter
+        sortField: $sortField
+        sortOrder: $sortOrder
+      ) {
         id
         name
         price_in_cents
         image_url
       }
+      _allProductsMeta(filter: $filter) {
+        count
+      }
     }
   `;
-  const { loading, error, data } = useQuery<AllProductsResponse>(PRODUCTS);
 
-  let filteredProducts = data?.allProducts || [];
+  const {
+    loading,
+    error,
+    data: allProductsResponse,
+  } = useQuery<AllProductsResponse>(PRODUCTS, {
+    variables: {
+      perPage,
+      currentPage,
+      filter: filterParsed,
+      sortField: sortParsed.field,
+      sortOrder: sortParsed.order,
+    },
+  });
+
+  let filteredProducts = allProductsResponse?.allProducts || [];
   if (filteredProducts.length > 0) {
     filteredProducts = filteredProducts.filter((product) =>
       product.name.toLowerCase().includes(textFilter.toLowerCase()),
@@ -56,5 +84,6 @@ export const useProducts = () => {
     loading,
     error,
     products: filteredProducts,
+    totalProducts: allProductsResponse?._allProductsMeta?.count || 0,
   };
 };
