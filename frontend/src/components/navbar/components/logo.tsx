@@ -14,6 +14,7 @@ const LogoStyled = styled.a`
   font-weight: 400;
   line-height: 150%;
   color: ${(props) => props.theme.colors.logo};
+  text-decoration: none;
 
   @media (min-width: ${(props) => props.theme.breakpoints.mobile}) {
     font-size: 2.5rem;
