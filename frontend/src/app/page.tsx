@@ -1,14 +1,5 @@
-'use client';
-
-import { FilterBar } from '@/components/filterBar';
-import { PageContentContainer } from '@/components/pageContentContainer';
-import { ProductsList } from '@/components/products/list';
+import { redirect } from 'next/navigation';
 
 export default function Home() {
-  return (
-    <PageContentContainer>
-      <FilterBar />
-      <ProductsList />
-    </PageContentContainer>
-  );
+  redirect('/products');
 }
