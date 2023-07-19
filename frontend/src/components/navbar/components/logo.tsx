@@ -21,5 +21,7 @@ const LogoStyled = styled.a`
 `;
 
 export const Logo = () => (
-  <LogoStyled className={sairaStencilOne.className}>capputeeno</LogoStyled>
+  <LogoStyled className={sairaStencilOne.className} href={'/'}>
+    capputeeno
+  </LogoStyled>
 );
