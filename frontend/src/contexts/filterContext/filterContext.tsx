@@ -1,4 +1,10 @@
-import { createContext, ReactNode, useContext, useState } from 'react';
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useState,
+} from 'react';
 
 import { FilterByCategoryOptions } from '@/contexts/filterContext/models/filterByCategoryOptions';
 import { FilterContextProps } from '@/contexts/filterContext/models/filterContextProps';
@@ -13,6 +19,10 @@ export const FilterProvider = ({ children }: { children: ReactNode }) => {
   const [text, setText] = useState('');
   const [currentPage, setPage] = useState(0);
   const PER_PAGE = 12;
+
+  useEffect(() => {
+    setPage(0);
+  }, [filterByCategory, sortBy]);
 
   return (
     <FilterContext.Provider
