@@ -15,6 +15,11 @@ declare module 'styled-components' {
       orangeLow: string;
       lightGray: string;
       lightBackground: string;
+      scrollbar: {
+        bgTrack: string;
+        bgHover: string;
+        bgHandle: string;
+      };
     };
     breakpoints: {
       mobile: string;

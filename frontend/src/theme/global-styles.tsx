@@ -7,6 +7,34 @@ const saira = Saira({
 });
 
 export const GlobalStyles = createGlobalStyle`
+  /* width */
+  ::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: ${(props) => props.theme.colors.scrollbar.bgTrack};
+    box-shadow: inset 0 0 5px grey;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: ${(props) => props.theme.colors.scrollbar.bgHandle};
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: ${(props) => props.theme.colors.scrollbar.bgHover};
+  }
+
+  html {
+    /* Fix css move issue */
+    overflow-x: hidden;
+    margin-right: calc(-1 * (100vw - 100%));
+  }
+
   body {
     font-size: 16px;
     background: ${(props) => props.theme.colors.bgPrimary};
