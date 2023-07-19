@@ -14,6 +14,8 @@ export const theme: DefaultTheme = {
     bgInput: '#F3F5F6',
     danger: '#DE3838',
     orangeLow: '#FFA585',
+    lightGray: '#E9E9F0',
+    lightBackground: '#F5F5FA',
   },
   breakpoints: {
     mobile: '968px',

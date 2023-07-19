@@ -13,6 +13,8 @@ declare module 'styled-components' {
       bgInput: string;
       danger: string;
       orangeLow: string;
+      lightGray: string;
+      lightBackground: string;
     };
     breakpoints: {
       mobile: string;
