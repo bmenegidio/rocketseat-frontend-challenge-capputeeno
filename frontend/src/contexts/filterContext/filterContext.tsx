@@ -11,6 +11,8 @@ export const FilterProvider = ({ children }: { children: ReactNode }) => {
     useState<FilterByCategoryOptions>(FilterByCategoryOptions.ALL);
   const [sortBy, setSortBy] = useState<SortByOptions>(SortByOptions.NEWS);
   const [text, setText] = useState('');
+  const [currentPage, setPage] = useState(0);
+  const PER_PAGE = 12;
 
   return (
     <FilterContext.Provider
@@ -21,6 +23,9 @@ export const FilterProvider = ({ children }: { children: ReactNode }) => {
         setSortBy,
         text,
         setText,
+        currentPage,
+        setPage,
+        perPage: PER_PAGE,
       }}
     >
       {children}

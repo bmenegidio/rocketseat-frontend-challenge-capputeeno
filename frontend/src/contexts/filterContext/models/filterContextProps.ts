@@ -8,4 +8,7 @@ export type FilterContextProps = {
   setSortBy: (sort: SortByOptions) => void;
   text: string;
   setText: (text: string) => void;
+  currentPage: number;
+  setPage: (page: number) => void;
+  perPage: number;
 };
