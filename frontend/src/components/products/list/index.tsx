@@ -38,6 +38,12 @@ export const ProductsList = () => {
             perPage={perPage}
           />
           <ProductsListStyled>{products.map(renderItem)}</ProductsListStyled>
+          <Pagination
+            totalItems={totalProducts}
+            currentPage={currentPage}
+            onPageChange={setPage}
+            perPage={perPage}
+          />
         </>
       )}
     </>
