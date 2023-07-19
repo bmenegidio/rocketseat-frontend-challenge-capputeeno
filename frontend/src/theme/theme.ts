@@ -16,6 +16,7 @@ export const theme: DefaultTheme = {
     orangeLow: '#FFA585',
     lightGray: '#E9E9F0',
     lightBackground: '#F5F5FA',
+    brandBlue: '#115D8C',
     scrollbar: {
       bgTrack: '#f1f1f1',
       bgHover: '#5D5D6D',

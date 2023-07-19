@@ -15,6 +15,7 @@ declare module 'styled-components' {
       orangeLow: string;
       lightGray: string;
       lightBackground: string;
+      brandBlue: string;
       scrollbar: {
         bgTrack: string;
         bgHover: string;
