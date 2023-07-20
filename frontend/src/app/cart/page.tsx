@@ -1,21 +1,21 @@
 'use client';
 
 import { BackButton } from '@/components/backButton';
-import { Button } from '@/components/cart/button';
-import { CardContainer } from '@/components/cart/cardContainer';
-import { CardContent } from '@/components/cart/cardContent';
-import { CardDescription } from '@/components/cart/cardDescription';
-import { CardtItem } from '@/components/cart/cardtItem';
-import { CardtItemsContainer } from '@/components/cart/cardtItemsContainer';
-import { CardTitle } from '@/components/cart/cardTitle';
-import { ContentFlex } from '@/components/cart/contentFlex';
-import { Image } from '@/components/cart/image';
-import { ImageContainer } from '@/components/cart/imageContainer';
-import { ItemPrice } from '@/components/cart/itemPrice';
+import { Button } from '@/components/cart/cartItems/button';
+import { CardContainer } from '@/components/cart/cartItems/cardContainer';
+import { CardContent } from '@/components/cart/cartItems/cardContent';
+import { CardDescription } from '@/components/cart/cartItems/cardDescription';
+import { CardtItem } from '@/components/cart/cartItems/cardtItem';
+import { CardtItemsContainer } from '@/components/cart/cartItems/cardtItemsContainer';
+import { CardTitle } from '@/components/cart/cartItems/cardTitle';
+import { ContentFlex } from '@/components/cart/cartItems/contentFlex';
+import { Image } from '@/components/cart/cartItems/image';
+import { ImageContainer } from '@/components/cart/cartItems/imageContainer';
+import { ItemPrice } from '@/components/cart/cartItems/itemPrice';
+import { Select } from '@/components/cart/cartItems/select';
+import { SubTitle, SubTitleStrong } from '@/components/cart/cartItems/subTitle';
+import { Title } from '@/components/cart/cartItems/title';
 import { OrderSummaryContainer } from '@/components/cart/orderSummaryContainer';
-import { Select } from '@/components/cart/select';
-import { SubTitle, SubTitleStrong } from '@/components/cart/subTitle';
-import { Title } from '@/components/cart/title';
 import { TrashIcon } from '@/components/icons/trash';
 import { PageContentContainer } from '@/components/pageContentContainer';
 import {
