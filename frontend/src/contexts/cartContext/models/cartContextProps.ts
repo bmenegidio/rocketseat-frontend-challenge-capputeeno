@@ -6,5 +6,7 @@ export type CartContextProps = {
   addCartItem: (item: ProductParsed) => boolean;
   updateProductQuantity: (params: UpdateProductQuantityProps) => void;
   deleteProduct: (productId: string) => void;
+  emptyTheCart: () => void;
+  subTotalProductsInCents: number;
   subTotalProductsInBrl: string;
 };

@@ -15,7 +15,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     'cart',
     [],
   );
-  const subTotalProductsInBrl = getSubTotalProductsInBrl();
+  const subTotalProductsInCents = getSubTotalProductsInCents();
+  const subTotalProductsInBrl = convertPriceInCentsToBrl(
+    subTotalProductsInCents,
+  );
 
   function addCartItem(cartItem: ProductParsed): boolean {
     const indexOfItem = cartItems.findIndex((item) => item.id === cartItem.id);
@@ -40,12 +43,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     return true;
   }
 
-  function getSubTotalProductsInBrl() {
-    const subTotalInCents = cartItems.reduce(
+  function getSubTotalProductsInCents() {
+    return cartItems.reduce(
       (acc, product) => (acc += product.price_in_cents * product.quantity!),
       0,
     );
-    return convertPriceInCentsToBrl(subTotalInCents);
   }
 
   function updateProductQuantity({
@@ -61,13 +63,19 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     setCartItems([...cartItems.filter((item) => item.id !== productId)]);
   }
 
+  function emptyTheCart() {
+    setCartItems([]);
+  }
+
   return (
     <CartContext.Provider
       value={{
         cartItems,
         addCartItem,
+        subTotalProductsInCents,
         subTotalProductsInBrl,
         updateProductQuantity,
+        emptyTheCart,
         deleteProduct,
       }}
     >
