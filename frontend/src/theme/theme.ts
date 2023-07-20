@@ -18,6 +18,7 @@ export const theme: DefaultTheme = {
     lightGray: '#E9E9F0',
     lightBackground: '#F5F5FA',
     brandBlue: '#115D8C',
+    bgDivider: '#DCE2E5',
     scrollbar: {
       bgTrack: '#f1f1f1',
       bgHover: '#5D5D6D',
