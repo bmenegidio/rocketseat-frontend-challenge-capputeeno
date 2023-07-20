@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 
 export const OrderSummaryContainer = styled.div`
-  border: 5px solid blue;
   flex: 1;
-  padding-top: 1rem;
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  background: ${(props) => props.theme.colors.white};
 `;

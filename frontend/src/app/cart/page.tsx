@@ -15,7 +15,7 @@ import { ItemPrice } from '@/components/cart/cartItems/itemPrice';
 import { Select } from '@/components/cart/cartItems/select';
 import { SubTitle, SubTitleStrong } from '@/components/cart/cartItems/subTitle';
 import { Title } from '@/components/cart/cartItems/title';
-import { OrderSummaryContainer } from '@/components/cart/orderSummaryContainer';
+import { OrderSummary } from '@/components/cart/orderSummary';
 import { TrashIcon } from '@/components/icons/trash';
 import { PageContentContainer } from '@/components/pageContentContainer';
 import {
@@ -96,6 +96,8 @@ export default function CartPage() {
             ))}
           </CardContainer>
         </CardtItemsContainer>
+
+        <OrderSummary />
       </ContentFlex>
     </PageContentContainer>
   );
