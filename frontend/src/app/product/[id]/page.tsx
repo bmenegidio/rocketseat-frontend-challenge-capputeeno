@@ -1,6 +1,7 @@
 'use client';
 
 import { useParams } from 'next/navigation';
+import { toast } from 'react-toastify';
 
 import { BackButton } from '@/components/backButton';
 import { ShoppingBagWhiteIcon } from '@/components/icons/shoppingBagWhite';
@@ -25,6 +26,11 @@ export default function ProductDetailPage() {
   const defaultFreightMessage =
     '*Frete de R$40,00 para todo o Brasil. Grátis para compras acima de R$900,00.';
 
+  function handleAddToCart() {
+    addCartItem(product);
+    toast('Produto adicionado ao carrinho', { type: 'success' });
+  }
+
   return (
     <PageContentContainer>
       <BackButton route={'/products'} />
@@ -42,7 +48,7 @@ export default function ProductDetailPage() {
               <DescriptionTitle>Descrição</DescriptionTitle>
               <DescriptionContent>{product.description}</DescriptionContent>
             </div>
-            <AddProduct onClick={() => addCartItem(product)}>
+            <AddProduct onClick={handleAddToCart}>
               <ShoppingBagWhiteIcon />
               Adicionar ao Carrinho
             </AddProduct>
