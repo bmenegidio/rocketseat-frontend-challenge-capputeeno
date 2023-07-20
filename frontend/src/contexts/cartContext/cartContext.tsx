@@ -1,8 +1,8 @@
 import { createContext, ReactNode, useContext } from 'react';
 
 import { CartContextProps } from '@/contexts/cartContext/models/cartContextProps';
-import { CartItem } from '@/contexts/cartContext/models/cartItem';
 import { useLocalStorage } from '@/hooks/useLocalStorage';
+import { ProductParsed } from '@/hooks/useProduct/models/productParsed';
 
 const CartContext = createContext<CartContextProps>({
   cartItems: [],
@@ -10,9 +10,12 @@ const CartContext = createContext<CartContextProps>({
 });
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
-  const [cartItems, setCartItems] = useLocalStorage<CartItem[]>('cart', []);
+  const [cartItems, setCartItems] = useLocalStorage<ProductParsed[]>(
+    'cart',
+    [],
+  );
 
-  function addCartItem(cartItem: CartItem) {
+  function addCartItem(cartItem: ProductParsed) {
     setCartItems([
       ...cartItems,
       {

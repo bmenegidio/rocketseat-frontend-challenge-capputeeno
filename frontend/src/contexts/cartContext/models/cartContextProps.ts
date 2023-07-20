@@ -1,6 +1,6 @@
-import { CartItem } from '@/contexts/cartContext/models/cartItem';
+import { ProductParsed } from '@/hooks/useProduct/models/productParsed';
 
 export type CartContextProps = {
-  cartItems: CartItem[];
-  addCartItem: (item: CartItem) => void;
+  cartItems: ProductParsed[];
+  addCartItem: (item: ProductParsed) => void;
 };
