@@ -1,7 +1,9 @@
 import { gql, useQuery } from '@apollo/client';
 
-import { Product } from '@/components/products/models/product';
+import { ProductParsed } from '@/hooks/useProduct/models/productParsed';
 import { ProductResponse } from '@/hooks/useProduct/models/productResponse';
+import { getCategoryNameByCode } from '@/hooks/useProduct/util/getCategoryNameByCode';
+import { convertPriceInCentsToBrl } from '@/utils/converters';
 
 export const useProduct = (productId: string) => {
   const PRODUCT_BY_ID = gql`
@@ -26,8 +28,17 @@ export const useProduct = (productId: string) => {
     },
   });
 
+  const product: ProductParsed = productResponse?.Product
+    ? {
+        ...productResponse.Product,
+        categoryLabel: getCategoryNameByCode(productResponse.Product.category),
+        priceInBrl: convertPriceInCentsToBrl(
+          productResponse.Product.price_in_cents,
+        ),
+      }
+    : ({} as ProductParsed);
   return {
-    product: productResponse?.Product || ({} as Product),
+    product,
     loading,
     error,
   };
