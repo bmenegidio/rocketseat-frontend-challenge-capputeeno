@@ -16,12 +16,21 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 
   function addCartItem(cartItem: ProductParsed) {
-    setCartItems([
-      ...cartItems,
-      {
+    const indexOfItem = cartItems.findIndex((item) => item.id === cartItem.id);
+    const itemAlreadyAdded = indexOfItem > -1;
+
+    if (itemAlreadyAdded) {
+      cartItems[indexOfItem].quantity = cartItems[indexOfItem].quantity! + 1;
+    }
+
+    if (!itemAlreadyAdded) {
+      cartItems.push({
         ...cartItem,
-      },
-    ]);
+        quantity: 1,
+      });
+    }
+
+    setCartItems([...cartItems]);
   }
 
   return (
