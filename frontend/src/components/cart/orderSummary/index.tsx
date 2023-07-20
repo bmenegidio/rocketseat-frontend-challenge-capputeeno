@@ -14,8 +14,12 @@ import { convertPriceInCentsToBrl } from '@/utils/converters';
 export const OrderSummary = () => {
   const freightFeeInCents = 4000;
   const router = useRouter();
-  const { subTotalProductsInBrl, subTotalProductsInCents, emptyTheCart } =
-    useCartContext();
+  const {
+    subTotalProductsInBrl,
+    subTotalProductsInCents,
+    emptyTheCart,
+    cartItems,
+  } = useCartContext();
 
   function sumTotalWithFreightAndConvertToBrl() {
     return convertPriceInCentsToBrl(
@@ -24,6 +28,13 @@ export const OrderSummary = () => {
   }
 
   function handleFinish() {
+    if (cartItems.length === 0) {
+      toast('Adicione ao menos 1 produto para finalizar a compra', {
+        type: 'warning',
+      });
+      return;
+    }
+
     router.push('/products');
     toast('Compra finalizada com sucesso', { type: 'success' });
     emptyTheCart();
