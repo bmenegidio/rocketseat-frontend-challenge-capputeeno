@@ -1,3 +1,5 @@
+import { useRouter } from 'next/navigation';
+
 import { Divider } from '@/components/divider';
 import { Pagination } from '@/components/pagination';
 import { FooterContainerStyled } from '@/components/products/list/components/footerContainerStyled';
@@ -11,11 +13,19 @@ import { useProducts } from '@/hooks/useProducts';
 import { convertPriceInCentsToBrl } from '@/utils/converters';
 
 export const ProductsList = () => {
+  const router = useRouter();
   const { products, totalProducts, loading } = useProducts();
   const { currentPage, setPage, perPage } = useFilter();
 
+  function handleProductNavigate(productId: string) {
+    router.push(`/product/${productId}`);
+  }
+
   const renderItem = (product: any) => (
-    <ListItemStyled key={product.id}>
+    <ListItemStyled
+      key={product.id}
+      onClick={() => handleProductNavigate(product.id)}
+    >
       <ImageStyled src={product.image_url} alt={product.name} />
       <FooterContainerStyled>
         <ProductNameStyled>{product.name}</ProductNameStyled>
