@@ -13,6 +13,7 @@ declare module 'styled-components' {
       bgPrimary: string;
       bgInput: string;
       danger: string;
+      success: string;
       orangeLow: string;
       lightGray: string;
       lightBackground: string;

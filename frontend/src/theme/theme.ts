@@ -14,6 +14,7 @@ export const theme: DefaultTheme = {
     bgPrimary: '#F0F0F5',
     bgInput: '#F3F5F6',
     danger: '#DE3838',
+    success: '#51B853',
     orangeLow: '#FFA585',
     lightGray: '#E9E9F0',
     lightBackground: '#F5F5FA',
