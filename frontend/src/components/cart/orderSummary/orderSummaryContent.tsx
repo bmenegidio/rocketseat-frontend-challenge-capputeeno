@@ -26,8 +26,8 @@ export const OrderSummaryContent = styled.div`
       text-transform: uppercase;
       margin-top: 0.75rem;
 
-      a:visited {
-        color: inherit;
+      a {
+        color: ${(props) => props.theme.colors.textDark2};
       }
     }
   }
