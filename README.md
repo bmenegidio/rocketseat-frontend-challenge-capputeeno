@@ -42,18 +42,24 @@ cd rocketseat-frontend-challenge-capputeeno
 cd frontend
 ```
 
-2. Instale as dependências
+2. Crie um arquivo `.env` na pasta `frontend` e cole o seguinte conteúdo
+```bash
+NEXT_PUBLIC_API_URL=http://127.0.0.1:3333
+```
+
+
+3. Instale as dependências
 
 ```bash
 npm install
 ```
 
-3. Inicie o frontend
+4. Inicie o frontend
 ```bash
 npm run dev
 ```
 
-4. Acesse o seguinte endereço no browser `http://127.0.0.1:3000`
+5. Acesse o seguinte endereço no browser `http://127.0.0.1:3000`
 
 # 🧠 Contexto
 
