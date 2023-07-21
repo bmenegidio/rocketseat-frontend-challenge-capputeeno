@@ -1,6 +1,6 @@
 # 🚀 Front end challenge
 
-![GitHub](https://img.shields.io/badge/license-MIT-green)
+![GitHub](https://img.shields.io/github/license/bmenegidio/rocketseat-frontend-challenge-capputeeno?style=flat-square)
 ![GitHub top language](https://img.shields.io/github/languages/top/bmenegidio/rocketseat-frontend-challenge-capputeeno)
 ![GitHub repo size](https://img.shields.io/github/repo-size/bmenegidio/rocketseat-frontend-challenge-capputeeno)
 
