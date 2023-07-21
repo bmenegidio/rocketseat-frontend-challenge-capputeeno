@@ -2,6 +2,8 @@
 
 import { DefaultTheme } from 'styled-components';
 
+const SCROLLBAR_WIDTH = '9px';
+
 export const theme: DefaultTheme = {
   borderRadius: '0.5rem',
   colors: {
@@ -32,7 +34,8 @@ export const theme: DefaultTheme = {
   padding: {
     content: {
       desktop: '20px 160px',
-      mobile: '12px 20px',
+      mobile: `12px calc(20px + ${SCROLLBAR_WIDTH}) 12px 20px`,
     },
   },
+  scrollbarWidth: SCROLLBAR_WIDTH,
 };

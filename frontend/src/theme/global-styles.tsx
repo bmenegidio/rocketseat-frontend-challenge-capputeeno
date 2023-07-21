@@ -9,7 +9,7 @@ const saira = Saira({
 export const GlobalStyles = createGlobalStyle`
   /* width */
   ::-webkit-scrollbar {
-    width: 9px;
+    width: ${(props) => props.theme.scrollbarWidth};
   }
 
   /* Track */
