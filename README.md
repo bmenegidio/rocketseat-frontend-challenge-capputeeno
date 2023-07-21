@@ -6,6 +6,12 @@
 
 Essa é a minha resolução do [desafio frontend da rocketseat](https://github.com/Rocketseat/frontend-challenge).
 
+# 🔗 Acesse o projeto online
+
+Fiz o deploy do projeto na Vercel, basta acessar o link abaixo para visualizar.
+
+https://rocketseat-frontend-challenge-capputeeno.vercel.app
+
 # 🖥️ Instalação
 
 ### Clone o repositório
